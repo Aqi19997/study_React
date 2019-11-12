@@ -14,15 +14,16 @@ import { connect } from "react-redux";
 import { saveUser } from "../../redux/action-creators.js";
 //引入接口文件
 import { reqLogin } from "../../api";
+//引入验证组件
+import WithCheckLogin from '../with-check-login/WithCheckLogin.jsx'
+
 const Item = Form.Item;
+@WithCheckLogin
 
 //装饰器的使用
-@connect(
-  null,
-  {
-    saveUser
-  }
-)
+@connect(null, {
+  saveUser
+})
 @Form.create()
 class Login extends Component {
   //阻止默认事件
@@ -37,10 +38,11 @@ class Login extends Component {
         //判断登录是否成功,0为成功 1为失败
         if (result.status === 0) {
           //成功
-          message.success("登陆成功,这是给你的奖励");
+          message.success("登陆成功");
           this.props.saveUser(result.data);
           //跳转到首页
-          // console.log(this)
+          console.log(this.props)
+
           this.props.history.replace("/");
         } else {
           message.error(result.msg);
