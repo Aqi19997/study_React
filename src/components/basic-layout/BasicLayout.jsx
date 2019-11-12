@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Layout, Breadcrumb} from "antd";
+import { Layout, Breadcrumb } from "antd";
 import logo from '../../assets/images/logo.png'//import要在const上面书写
 import './BasicLayout.less'
 //将左边的菜单装成一个组件LeftNav引入进来
-import LeftNav from'./left-nav/LeftNav'
+import LeftNav from './left-nav/LeftNav'
 const { Header, Content, Footer, Sider } = Layout;
 class BasicLayout extends Component {
   //状态数据
@@ -30,7 +30,7 @@ class BasicLayout extends Component {
             <h2 style={{ display: this.state.collapsed ? 'none' : 'block' }}>硅谷后台</h2>
           </div>
           {/* logo位置 */}
-          <LeftNav/>
+          <LeftNav />
         </Sider>
         <Layout>
           <Header style={{ background: "#fff", padding: 0 }} />

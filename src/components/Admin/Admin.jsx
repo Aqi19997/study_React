@@ -11,7 +11,7 @@ class Admin extends Component {
   render() {
     return (
       <div>
-        <BasicLayout/>
+        <BasicLayout />
       </div>
     );
   }
