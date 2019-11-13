@@ -1,63 +1,57 @@
-export default [
-
+const menus = [
   {
     icon: 'home',
     title: '首页',
-    key: '1'
+    key: '/'
   },
-
   {
     icon: 'appstore',
     title: '商品',
-    key: '2',
+    key: '/products',
     children: [
       {
-        icon: 'home',
+        icon: 'bars',
         title: '分类管理',
-        key: '3'
+        key: '/category'
       },
       {
-        icon: 'home',
+        icon: 'tool',
         title: '商品管理',
-        key: '4'
-      }
+        key: '/product'
+      },
     ]
   },
-
   {
-    icon: 'home',
+    icon: 'user',
     title: '用户管理',
-    key: '5'
+    key: '/user'
   },
-
   {
-    icon: 'home',
+    icon: 'safety',
     title: '权限管理',
-    key: '6'
+    key: '/role'
   },
-
   {
-    icon: 'home',
-    title: '图形图表',
-    key: '7',
+    icon: 'area-chart',
+    title: '图形管理',
+    key: '/charts',
     children: [
       {
-        icon: 'home',
+        icon: 'bar-chart',
         title: '柱状图',
-        key: '8'
+        key: '/charts/bar'
       },
       {
-        icon: 'home',
+        icon: 'line-chart',
         title: '折线图',
-        key: '9'
+        key: '/charts/line'
       },
       {
-        icon: 'home',
-        title: '饼状图',
-        key: '10'
+        icon: 'pie-chart',
+        title: '圆饼图',
+        key: '/charts/pie'
       }
     ]
   }
-
-
 ]
+export default menus

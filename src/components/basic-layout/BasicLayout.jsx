@@ -4,7 +4,14 @@ import logo from '../../assets/images/logo.png'//import要在const上面书写
 import './BasicLayout.less'
 //将左边的菜单装成一个组件LeftNav引入进来
 import LeftNav from './left-nav/LeftNav'
+//引入验证组件
+import WithCheckLogin from '../../containers/with-check-login/WithCheckLogin.jsx'
+
+
 const { Header, Content, Footer, Sider } = Layout;
+
+
+@WithCheckLogin
 class BasicLayout extends Component {
   //状态数据
   state = {
@@ -40,7 +47,10 @@ class BasicLayout extends Component {
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-              Bill is a cat.
+              {
+                //children代表的是当前这个父级组件的所有子级组件
+                this.props.children
+              }
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
