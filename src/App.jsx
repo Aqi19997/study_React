@@ -1,5 +1,5 @@
 //引入React
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 //引入routers
 import routes from "./config/routes.js";
 //引入路由
@@ -10,23 +10,27 @@ import NotMatch from './components/not-match/NotMatch.jsx'
 import BasicLayout from './components/basic-layout/BasicLayout.jsx'
 //引入login
 import Login from './containers/Login/Login.jsx'
+//引入spin(加载中动画组件)\
+import { Spin } from 'antd';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route path="/login" component={Login} />
-          <BasicLayout>
-            <Switch>
-              {
-                routes.map((route, index) => (<Route key={index} {...route} />))
-              }
-              <Route component={NotMatch} />
-            </Switch>
-          </BasicLayout>
-        </Switch>
+    <Suspense fallback={<Spin size="large" />}>
+        <Router>
+          <Switch>
+            <Route path="/login" component={Login}  />
+            <BasicLayout>
+              <Switch>
+                {
+                  routes.map((route, index) => (<Route key={index} {...route} />))
+                }
+                <Route component={NotMatch} />
+              </Switch>
+            </BasicLayout>
+          </Switch>
+        </Router>
+      </Suspense>
 
-      </Router>
     );
   }
 }

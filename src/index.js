@@ -10,6 +10,11 @@ import { Provider } from "react-redux";
 import App from "./App.jsx";
 //引入样式重置
 import "./assets/css/reset.css";
+//引入国际化文件i18n
+import './i18n/i18n.js'
+
+
+
 //渲染组件
 ReactDOM.render(
   <Provider store={store}>
